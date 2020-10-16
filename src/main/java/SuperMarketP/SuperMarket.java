@@ -60,7 +60,7 @@ public class SuperMarket {
                     int initialStock = productList.get(id).stock;
                     productList.get(id).stock -= quantity;
                     if (initialStock <= productList.get(id).stock)
-                        throw new Exception("Error Occurred");
+                        throw new Exception("Stock Error Occurred");
                 } else throw new Exception("Error Occurred");
             }
         } else throw new Exception("Error Occurred");
