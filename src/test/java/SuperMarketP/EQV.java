@@ -14,23 +14,30 @@ public class EQV {
 
     SuperMarket superMarket = new SuperMarket(CustomerBalance);
 
+    public EQV() throws Exception {
+    }
+
     // Invalid check
     @Test
     public void invalidIdCheck0() {
         assertEquals(false, superMarket.checkExistPdt(mnId - 1));
     }
+
     @Test
     public void invalidIdCheck1() {
         assertEquals(false, superMarket.checkExistPdt(mxId + 1));
     }
+
     @Test
     public void invalidQtyCheck0() {
         assertEquals(false, superMarket.checkExistQty(id, mnQty - 1));
     }
+
     @Test
     public void invalidQtyCheck1() {
         assertEquals(false, superMarket.checkExistQty(id, mxQty + 1));
     }
+
     @Test
     public void invalidCustomerBalance() {
         try {

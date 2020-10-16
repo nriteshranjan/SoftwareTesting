@@ -16,31 +16,40 @@ public class BVA {
 
     SuperMarket superMarket = new SuperMarket(CustomerBalance);
 
+    public BVA() throws Exception {
+    }
+
     // ID check
     @Test
     public void invalidIdCheck0() {
         assertEquals(false, superMarket.checkExistPdt(mnId - 1));
     }
+
     @Test
     public void validIdCheck0() {
         assertEquals(true, superMarket.checkExistPdt(mnId));
     }
+
     @Test
     public void validIdCheck1() {
         assertEquals(true, superMarket.checkExistPdt(mnId + 1));
     }
+
     @Test
     public void validIdCheck2() {
         assertEquals(true, superMarket.checkExistPdt(avgId));
     }
+
     @Test
     public void validIdCheck3() {
         assertEquals(true, superMarket.checkExistPdt(mxId - 1));
     }
+
     @Test
     public void validIdCheck4() {
         assertEquals(true, superMarket.checkExistPdt(mxId));
     }
+
     @Test
     public void invalidIdCheck1() {
         assertEquals(false, superMarket.checkExistPdt(mxId + 1));
@@ -51,26 +60,32 @@ public class BVA {
     public void invalidQtyCheck0() {
         assertEquals(false, superMarket.checkExistQty(id, mnQty - 1));
     }
+
     @Test
     public void validQtyCheck0() {
         assertEquals(true, superMarket.checkExistQty(id, mnQty));
     }
+
     @Test
     public void validQtyCheck1() {
         assertEquals(true, superMarket.checkExistQty(id, mnQty + 1));
     }
+
     @Test
     public void validQtyCheck2() {
         assertEquals(true, superMarket.checkExistQty(id, avgQty));
     }
+
     @Test
     public void validQtyCheck3() {
         assertEquals(true, superMarket.checkExistQty(id, mxQty - 1));
     }
+
     @Test
     public void validQtyCheck4() {
         assertEquals(true, superMarket.checkExistQty(id, mxQty));
     }
+
     @Test
     public void invalidQtyCheck1() {
         assertEquals(false, superMarket.checkExistQty(id, mxQty + 1));
@@ -86,6 +101,7 @@ public class BVA {
             assertSame("Sufficient Balance not Available", e.getMessage());
         }
     }
+
     @Test
     public void validCustomerBalance() throws Exception {
         try {

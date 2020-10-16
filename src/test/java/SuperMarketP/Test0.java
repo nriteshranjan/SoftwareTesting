@@ -8,6 +8,9 @@ public class Test0 {
     int CustomerBalance = 1000;
     SuperMarket superMarket = new SuperMarket(CustomerBalance);
 
+    public Test0() throws Exception {
+    }
+
     @Test
     public void initialise() {
         assertEquals(1000, superMarket.CustomerBalance);
@@ -25,8 +28,8 @@ public class Test0 {
     public void buyValidId() throws Exception {
         // check remaining BALANCE
         int id = 5;
-        int quantity = 1;
-        if(!superMarket.checkExistPdt(id)) throw new Exception("Item not present");
+        int quantity = 5;
+        if (!superMarket.checkExistPdt(id)) throw new Exception("Item not present");
         int Price = superMarket.productList.get(id).price;
         int totalCost = Price * quantity;
         assertEquals(superMarket.CustomerBalance - totalCost, superMarket.buy(id, quantity));
@@ -38,12 +41,11 @@ public class Test0 {
             // check remaining BALANCE
             int id = 10;
             int quantity = 1;
-            if(!superMarket.checkExistPdt(id)) throw new Exception("Item not present");
+            if (!superMarket.checkExistPdt(id)) throw new Exception("Item not present");
             int Price = superMarket.productList.get(id).price;
             int totalCost = Price * quantity;
             assertEquals(superMarket.CustomerBalance - totalCost, superMarket.buy(id, quantity));
-        }
-        catch(Exception e) {
+        } catch (Exception e) {
             assertEquals("Item not present", e.getMessage());
         }
     }
